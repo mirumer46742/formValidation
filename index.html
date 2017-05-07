@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation and Ajax</title>
+
+
+<!--  <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>   -->
+
+  
+  <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+
+
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>University of Kashmir | Admission Form 2017</legend>
+
+<!-- Text input for first Name-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">First Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input for last name-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Last Name</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input for parentage-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Parentage</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="parentage" placeholder="Parentage" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input for email-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">Email ID</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input for contact number-->
+       
+<div class="form-group">
+  <label class="col-md-4 control-label">Contact Number</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input name="phone" placeholder="9596-06-2959" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+
+<!-- radio checks -->
+ <div class="form-group">
+                        <label class="col-md-4 control-label">Gender:</label>
+                        <div class="col-md-4">
+                            <span class="radio gap">
+                                <label>
+                                    <input type="radio" name="gender" value="male" checked/> Male
+                                </label>
+                            </span>
+                            <span class="radio gap">
+                            </span>
+
+                            <span class="radio gap">
+                                <label>
+                                    <input type="radio" name="gender" value="female" /> Female
+                                </label>
+                            </span>
+                        </div>
+  </div>
+
+<!-- Text input for address-->
+      
+<div class="form-group">
+  <label class="col-md-4 control-label">Address</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="address" placeholder="Address" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input for city-->
+ 
+<div class="form-group">
+  <label class="col-md-4 control-label">City</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input name="city" placeholder="City" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic for state-->
+   
+<div class="form-group"> 
+  <label class="col-md-4 control-label">State</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="state" class="form-control selectpicker" >
+      <option value=" " >Please select your state</option>
+      <option>Andhra Pradesh</option>
+      <option>Arunachal Pradesh</option>
+      <option >Bihar</option>
+      <option >Chandigarh</option>
+      <option >Jammu and Kashmir</option>
+      <option >Kerala</option>
+      <option >Karnataka</option>
+      
+    </select>
+  </div>
+</div>
+</div>
+
+<!-- Text input -->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Pin Code</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pushpin"></i></span>
+  <input name="zip" placeholder="Pin Code" class="form-control"  type="text">
+    </div>
+</div>
+</div>  
+
+
+
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-send"></span> Send </button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div><!-- /.container -->
+
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script src='js/bootstrap.min.js'></script>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
